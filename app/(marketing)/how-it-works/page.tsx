@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
                   {
                     n: '03',
                     title: 'Sign and move in',
-                    desc: 'Once you confirm, we prepare a stamped rental agreement. You pay the security deposit and the first month's rent via bank transfer. Keys are handed over on move-in day with everything tested and WiFi active.',
+                    desc: "Once you confirm, we prepare a stamped rental agreement. You pay the security deposit and the first month's rent via bank transfer. Keys are handed over on move-in day with everything tested and WiFi active.",
                   },
                   {
                     n: '04',
@@ -89,7 +89,7 @@ export default function HowItWorksPage() {
                   {
                     n: '04',
                     title: 'Renew or exit cleanly',
-                    desc: 'At the end of 12 months, you choose to renew or take the property back. If you exit, we ensure a clean handover with full documentation of the property's condition.',
+                    desc: "At the end of 12 months, you choose to renew or take the property back. If you exit, we ensure a clean handover with full documentation of the property's condition.",
                   },
                 ].map((step) => (
                   <li key={step.n} className="flex gap-6">

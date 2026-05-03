@@ -23,7 +23,7 @@ const WHATS_INCLUDED = [
   {
     title: 'No brokerage',
     description:
-      'You pay only the security deposit and first month's rent. No broker fee, no finder's fee.',
+      "You pay only the security deposit and first month's rent. No broker fee, no finder's fee.",
   },
   {
     title: 'Verified properties',

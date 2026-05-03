@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Input } from '@/components/ui/Input'
+import { Select } from '@/components/ui/Select'
 import { Button } from '@/components/ui/Button'
 import { LOCALITIES } from '@/lib/constants'
 
@@ -52,10 +53,11 @@ export function OwnerLeadForm() {
 
   if (state === 'success') {
     return (
-      <div role="status" className="rounded-2xl border border-success/30 bg-success/5 p-8 text-center">
-        <p className="font-heading font-medium text-ink text-lg mb-2">
-          We'll be in touch shortly.
-        </p>
+      <div
+        role="status"
+        className="rounded-2xl border border-success/30 bg-success/5 p-8 text-center"
+      >
+        <p className="font-heading font-medium text-ink text-lg mb-2">We'll be in touch shortly.</p>
         <p className="text-ink-muted">
           One of our property managers will call you within one business day.
         </p>
@@ -73,26 +75,24 @@ export function OwnerLeadForm() {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <Input id="name" name="name" label="Your name" placeholder="Suresh Reddy" required />
-        <Input id="phone" name="phone" type="tel" label="Mobile number" placeholder="98765 43210" required />
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          label="Mobile number"
+          placeholder="98765 43210"
+          required
+        />
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="locality" className="text-sm font-medium text-ink">
-          Locality
-        </label>
-        <select
-          id="locality"
-          name="locality"
-          className="block w-full rounded-lg border border-border bg-surface px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
-        >
-          <option value="">Select a locality</option>
-          {LOCALITIES.map((l) => (
-            <option key={l.slug} value={l.slug}>
-              {l.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <Select id="locality" name="locality" label="Locality" className="py-3">
+        <option value="">Select a locality</option>
+        {LOCALITIES.map((l) => (
+          <option key={l.slug} value={l.slug}>
+            {l.name}
+          </option>
+        ))}
+      </Select>
 
       <div className="grid sm:grid-cols-2 gap-5">
         <Input
@@ -112,21 +112,12 @@ export function OwnerLeadForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="furnishing_type" className="text-sm font-medium text-ink">
-          Furnishing
-        </label>
-        <select
-          id="furnishing_type"
-          name="furnishing_type"
-          className="block w-full rounded-lg border border-border bg-surface px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
-        >
-          <option value="">Select furnishing</option>
-          <option value="fully_furnished">Fully Furnished</option>
-          <option value="semi_furnished">Semi-Furnished</option>
-          <option value="unfurnished">Unfurnished</option>
-        </select>
-      </div>
+      <Select id="furnishing_type" name="furnishing_type" label="Furnishing" className="py-3">
+        <option value="">Select furnishing</option>
+        <option value="fully_furnished">Fully Furnished</option>
+        <option value="semi_furnished">Semi-Furnished</option>
+        <option value="unfurnished">Unfurnished</option>
+      </Select>
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className="text-sm font-medium text-ink">

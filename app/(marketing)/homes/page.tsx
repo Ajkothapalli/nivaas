@@ -7,6 +7,7 @@ import { listAvailable } from '@/lib/repositories/properties'
 import { LOCALITIES, BUDGET_RANGES, PROPERTY_TYPES, LISTING_TYPES } from '@/lib/constants'
 import { type Property } from '@/lib/validation/property'
 import { whatsappLink } from '@/lib/whatsapp'
+import { Select } from '@/components/ui/Select'
 
 export const metadata: Metadata = {
   title: 'Browse Managed Rental Homes in Hyderabad',
@@ -52,110 +53,81 @@ export default async function HomesPage({ searchParams }: { searchParams: Search
           </p>
 
           {/* Filter strip */}
-          <form method="GET" className="flex flex-wrap gap-3 pb-8 border-b border-border">
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="filter-property-type"
-                className="text-xs font-medium text-ink-muted sr-only"
-              >
-                Property type
-              </label>
-              <select
-                id="filter-property-type"
-                name="property_type"
-                defaultValue={searchParams.property_type ?? ''}
-                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">Residential / Commercial</option>
-                {PROPERTY_TYPES.map((t) => (
-                  <option key={t.value} value={t.value}>
-                    {t.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <form method="GET" className="flex flex-wrap items-end gap-3 pb-8 border-b border-border">
+            <Select
+              id="filter-property-type"
+              name="property_type"
+              label="Property type"
+              labelClassName="sr-only"
+              defaultValue={searchParams.property_type ?? ''}
+            >
+              <option value="">Residential / Commercial</option>
+              {PROPERTY_TYPES.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </Select>
 
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="filter-listing-type"
-                className="text-xs font-medium text-ink-muted sr-only"
-              >
-                Listing type
-              </label>
-              <select
-                id="filter-listing-type"
-                name="listing_type"
-                defaultValue={searchParams.listing_type ?? ''}
-                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">Rent / Lease / Sale</option>
-                {LISTING_TYPES.map((t) => (
-                  <option key={t.value} value={t.value}>
-                    {t.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="filter-listing-type"
+              name="listing_type"
+              label="Listing type"
+              labelClassName="sr-only"
+              defaultValue={searchParams.listing_type ?? ''}
+            >
+              <option value="">Rent / Lease / Sale</option>
+              {LISTING_TYPES.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </Select>
 
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="filter-locality"
-                className="text-xs font-medium text-ink-muted sr-only"
-              >
-                Locality
-              </label>
-              <select
-                id="filter-locality"
-                name="locality"
-                defaultValue={searchParams.locality ?? ''}
-                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">All localities</option>
-                {LOCALITIES.map((l) => (
-                  <option key={l.slug} value={l.slug}>
-                    {l.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="filter-locality"
+              name="locality"
+              label="Locality"
+              labelClassName="sr-only"
+              defaultValue={searchParams.locality ?? ''}
+            >
+              <option value="">All localities</option>
+              {LOCALITIES.map((l) => (
+                <option key={l.slug} value={l.slug}>
+                  {l.name}
+                </option>
+              ))}
+            </Select>
 
-            <div className="flex flex-col gap-1">
-              <label htmlFor="filter-bhk" className="text-xs font-medium text-ink-muted sr-only">
-                BHK
-              </label>
-              <select
-                id="filter-bhk"
-                name="bhk"
-                defaultValue={searchParams.bhk ?? ''}
-                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">Any BHK</option>
-                {[1, 2, 3, 4].map((n) => (
-                  <option key={n} value={n}>
-                    {n} BHK
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="filter-bhk"
+              name="bhk"
+              label="BHK"
+              labelClassName="sr-only"
+              defaultValue={searchParams.bhk ?? ''}
+            >
+              <option value="">Any BHK</option>
+              {[1, 2, 3, 4].map((n) => (
+                <option key={n} value={n}>
+                  {n} BHK
+                </option>
+              ))}
+            </Select>
 
-            <div className="flex flex-col gap-1">
-              <label htmlFor="filter-budget" className="text-xs font-medium text-ink-muted sr-only">
-                Budget
-              </label>
-              <select
-                id="filter-budget"
-                name="budget"
-                defaultValue={searchParams.budget ?? ''}
-                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">Any budget</option>
-                {BUDGET_RANGES.map((r) => (
-                  <option key={r.label} value={r.label}>
-                    {r.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="filter-budget"
+              name="budget"
+              label="Budget"
+              labelClassName="sr-only"
+              defaultValue={searchParams.budget ?? ''}
+            >
+              <option value="">Any budget</option>
+              {BUDGET_RANGES.map((r) => (
+                <option key={r.label} value={r.label}>
+                  {r.label}
+                </option>
+              ))}
+            </Select>
 
             <button
               type="submit"

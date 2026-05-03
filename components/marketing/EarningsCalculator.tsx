@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { formatRent } from '@/lib/format'
+import { Select } from '@/components/ui/Select'
 
 const LOCALITY_RANGES: Record<string, { min: number; max: number }> = {
   'hitec-city': { min: 25000, max: 60000 },
@@ -37,50 +38,42 @@ export function EarningsCalculator() {
       </p>
 
       <div className="grid sm:grid-cols-3 gap-4 mb-6">
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="calc-locality" className="text-sm font-medium text-ink">
-            Locality
-          </label>
-          <select
-            id="calc-locality"
-            value={locality}
-            onChange={(e) => {
-              setLocality(e.target.value)
-              setExpectedRent('')
-            }}
-            className="rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-          >
-            <option value="">Select locality</option>
-            {Object.entries(LOCALITY_RANGES).map(([slug, r]) => (
-              <option key={slug} value={slug}>
-                {slug
-                  .split('-')
-                  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                  .join(' ')}{' '}
-                (₹{(r.min / 1000).toFixed(0)}k–₹{(r.max / 1000).toFixed(0)}k)
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          id="calc-locality"
+          label="Locality"
+          value={locality}
+          className="bg-bg"
+          onChange={(e) => {
+            setLocality(e.target.value)
+            setExpectedRent('')
+          }}
+        >
+          <option value="">Select locality</option>
+          {Object.entries(LOCALITY_RANGES).map(([slug, r]) => (
+            <option key={slug} value={slug}>
+              {slug
+                .split('-')
+                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(' ')}{' '}
+              (₹{(r.min / 1000).toFixed(0)}k–₹{(r.max / 1000).toFixed(0)}k)
+            </option>
+          ))}
+        </Select>
 
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="calc-bhk" className="text-sm font-medium text-ink">
-            Property size
-          </label>
-          <select
-            id="calc-bhk"
-            value={bhk}
-            onChange={(e) => setBhk(e.target.value)}
-            className="rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-          >
-            <option value="">Select BHK</option>
-            {[1, 2, 3, 4].map((n) => (
-              <option key={n} value={n}>
-                {n} BHK
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          id="calc-bhk"
+          label="Property size"
+          value={bhk}
+          className="bg-bg"
+          onChange={(e) => setBhk(e.target.value)}
+        >
+          <option value="">Select BHK</option>
+          {[1, 2, 3, 4].map((n) => (
+            <option key={n} value={n}>
+              {n} BHK
+            </option>
+          ))}
+        </Select>
 
         <div className="flex flex-col gap-1.5">
           <label htmlFor="calc-rent" className="text-sm font-medium text-ink">

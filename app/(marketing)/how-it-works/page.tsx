@@ -53,7 +53,7 @@ export default function HowItWorksPage() {
                   },
                 ].map((step) => (
                   <li key={step.n} className="flex gap-6">
-                    <span className="font-heading font-semibold text-3xl text-accent/30 leading-none w-12 flex-shrink-0">
+                    <span className="font-heading font-bold text-2xl text-accent/30 leading-none w-10 flex-shrink-0 tabular-nums">
                       {step.n}
                     </span>
                     <div>
@@ -93,7 +93,7 @@ export default function HowItWorksPage() {
                   },
                 ].map((step) => (
                   <li key={step.n} className="flex gap-6">
-                    <span className="font-heading font-semibold text-3xl text-accent/30 leading-none w-12 flex-shrink-0">
+                    <span className="font-heading font-bold text-2xl text-accent/30 leading-none w-10 flex-shrink-0 tabular-nums">
                       {step.n}
                     </span>
                     <div>

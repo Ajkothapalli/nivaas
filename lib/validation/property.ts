@@ -4,6 +4,10 @@ export const FurnishingEnum = z.enum(['fully_furnished', 'semi_furnished', 'unfu
 
 export const PropertyStatusEnum = z.enum(['available', 'reserved', 'rented', 'draft'])
 
+export const PropertyTypeEnum = z.enum(['residential', 'commercial'])
+
+export const ListingTypeEnum = z.enum(['rent', 'lease', 'sale'])
+
 export const LocalityEnum = z.enum([
   'gachibowli',
   'madhapur',
@@ -32,9 +36,13 @@ export const PropertySchema = z.object({
   description: z.string().min(80).max(800),
   images: z.array(z.string()).min(4).max(10),
   status: PropertyStatusEnum,
+  property_type: PropertyTypeEnum,
+  listing_type: ListingTypeEnum,
 })
 
 export type Property = z.infer<typeof PropertySchema>
 export type Furnishing = z.infer<typeof FurnishingEnum>
 export type PropertyStatus = z.infer<typeof PropertyStatusEnum>
 export type Locality = z.infer<typeof LocalityEnum>
+export type PropertyType = z.infer<typeof PropertyTypeEnum>
+export type ListingType = z.infer<typeof ListingTypeEnum>

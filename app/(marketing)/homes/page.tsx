@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { CTABlock } from '@/components/marketing/CTABlock'
 import { listAvailable } from '@/lib/repositories/properties'
-import { LOCALITIES, BUDGET_RANGES, FURNISHING_LABELS } from '@/lib/constants'
+import { LOCALITIES, BUDGET_RANGES, PROPERTY_TYPES, LISTING_TYPES } from '@/lib/constants'
 import { type Property } from '@/lib/validation/property'
 import { whatsappLink } from '@/lib/whatsapp'
 
@@ -18,6 +18,8 @@ interface SearchParams {
   locality?: string
   bhk?: string
   budget?: string
+  property_type?: string
+  listing_type?: string
 }
 
 function filterProperties(properties: Property[], params: SearchParams): Property[] {
@@ -28,15 +30,13 @@ function filterProperties(properties: Property[], params: SearchParams): Propert
       const range = BUDGET_RANGES.find((r) => r.label === params.budget)
       if (range && (p.rent_monthly < range.min || p.rent_monthly > range.max)) return false
     }
+    if (params.property_type && p.property_type !== params.property_type) return false
+    if (params.listing_type && p.listing_type !== params.listing_type) return false
     return true
   })
 }
 
-export default async function HomesPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
+export default async function HomesPage({ searchParams }: { searchParams: SearchParams }) {
   const allProperties = await listAvailable()
   const filtered = filterProperties(allProperties, searchParams)
 
@@ -54,7 +54,54 @@ export default async function HomesPage({
           {/* Filter strip */}
           <form method="GET" className="flex flex-wrap gap-3 pb-8 border-b border-border">
             <div className="flex flex-col gap-1">
-              <label htmlFor="filter-locality" className="text-xs font-medium text-ink-muted sr-only">
+              <label
+                htmlFor="filter-property-type"
+                className="text-xs font-medium text-ink-muted sr-only"
+              >
+                Property type
+              </label>
+              <select
+                id="filter-property-type"
+                name="property_type"
+                defaultValue={searchParams.property_type ?? ''}
+                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              >
+                <option value="">Residential / Commercial</option>
+                {PROPERTY_TYPES.map((t) => (
+                  <option key={t.value} value={t.value}>
+                    {t.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="filter-listing-type"
+                className="text-xs font-medium text-ink-muted sr-only"
+              >
+                Listing type
+              </label>
+              <select
+                id="filter-listing-type"
+                name="listing_type"
+                defaultValue={searchParams.listing_type ?? ''}
+                className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              >
+                <option value="">Rent / Lease / Sale</option>
+                {LISTING_TYPES.map((t) => (
+                  <option key={t.value} value={t.value}>
+                    {t.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <label
+                htmlFor="filter-locality"
+                className="text-xs font-medium text-ink-muted sr-only"
+              >
                 Locality
               </label>
               <select
@@ -117,7 +164,11 @@ export default async function HomesPage({
               Filter
             </button>
 
-            {(searchParams.locality || searchParams.bhk || searchParams.budget) && (
+            {(searchParams.locality ||
+              searchParams.bhk ||
+              searchParams.budget ||
+              searchParams.property_type ||
+              searchParams.listing_type) && (
               <a
                 href="/homes"
                 className="px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-ink-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"

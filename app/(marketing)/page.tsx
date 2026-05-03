@@ -24,10 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const [featuredProperties, localities] = await Promise.all([
-    listFeatured(6),
-    listLocalities(),
-  ])
+  const [featuredProperties, localities] = await Promise.all([listFeatured(6), listLocalities()])
 
   return (
     <>
@@ -41,7 +38,7 @@ export default async function HomePage() {
         subheading="Browse verified, furnished rentals in Gachibowli, Madhapur, HITEC City, and more. No brokerage. One number for everything."
         primaryCta={{ label: 'Browse Homes', href: '/homes' }}
         secondaryCta={{ label: 'List Your Property', href: '/owners' }}
-        imageSrc="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
+        imageSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fit=crop"
         imageAlt="Well-furnished living room in a Hyderabad apartment managed by Nivaas"
       />
 
@@ -88,8 +85,7 @@ export default async function HomePage() {
               Neighbourhoods We Manage
             </h2>
             <p className="text-ink-muted max-w-xl">
-              Seven localities across Hyderabad's western IT corridor, each with its own
-              character.
+              Seven localities across Hyderabad's western IT corridor, each with its own character.
             </p>
           </div>
 

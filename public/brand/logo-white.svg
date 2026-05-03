@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 32" fill="none" role="img" aria-label="Nivaas">
+  <!-- House icon -->
+  <path d="M4 17 L14 7 L24 17 L24 27 L4 27 Z" fill="white"/>
+  <rect x="9.5" y="19" width="4.5" height="8" rx="0.5" fill="#2D4A3E"/>
+  <rect x="15" y="17" width="4.5" height="4" rx="0.5" fill="#2D4A3E" opacity="0.6"/>
+  <!-- Wordmark -->
+  <text x="30" y="23" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="600" fill="white" letter-spacing="-0.3">Nivaas</text>
+</svg>

@@ -33,3 +33,9 @@ Thumbs.db
 # Logs
 *.log
 .vercel
+
+# Tooling
+.claude/
+gh.zip
+gh_2.48.0_macOS_arm64/
+

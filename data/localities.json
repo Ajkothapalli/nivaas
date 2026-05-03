@@ -9,7 +9,7 @@
     "it_parks": ["DLF Cyber City", "Mindspace Gachibowli", "IIIT Hyderabad", "ISB Hyderabad"],
     "landmarks": ["Inorbit Mall", "University of Hyderabad", "Shilparamam", "ORR Junction"],
     "transit": ["Metro: Raidurg (3 km)", "TSRTC Hub: Gachibowli X Roads"],
-    "image": "/localities/gachibowli.jpg"
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fit=crop"
   },
   {
     "slug": "madhapur",
@@ -21,7 +21,7 @@
     "it_parks": ["Cyber Towers", "Cyber Pearl", "Raheja Commerzone"],
     "landmarks": ["Jubilee Hills (adjacent)", "PVR Cinemas", "Forum Sujana Mall"],
     "transit": ["Metro: Madhapur (walking distance)", "TSRTC: Cyber Towers Bus Stop"],
-    "image": "/localities/madhapur.jpg"
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop"
   },
   {
     "slug": "kondapur",
@@ -33,7 +33,7 @@
     "it_parks": ["HITEC City (adjacent)", "Lanco Hills", "Aparna Cyber Life"],
     "landmarks": ["Botanical Gardens", "Kothaguda X Roads", "Apollo Pharmacy Hub"],
     "transit": ["Metro: Kothaguda (2 km)", "TSRTC: Kondapur X Roads"],
-    "image": "/localities/kondapur.jpg"
+    "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop"
   },
   {
     "slug": "hitec-city",
@@ -44,8 +44,11 @@
     "avg_rent_max": 60000,
     "it_parks": ["Mindspace HITEC City", "Salarpuria Sattva", "Q City", "Tata Consultancy"],
     "landmarks": ["HITEC City Metro Station", "Inorbit Mall", "Cyber Pearl"],
-    "transit": ["Metro: HITEC City Station (walking distance)", "TSRTC express routes to Secunderabad"],
-    "image": "/localities/hitec-city.jpg"
+    "transit": [
+      "Metro: HITEC City Station (walking distance)",
+      "TSRTC express routes to Secunderabad"
+    ],
+    "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&fit=crop"
   },
   {
     "slug": "financial-district",
@@ -54,10 +57,15 @@
     "description": "The Financial District occupies the stretch between Gachibowli and Narsingi, dominated by the gleaming campuses of Deloitte, Accenture, Amazon, and the BSE's Hyderabad operations. It is newer than HITEC City and consequently has wider roads, fresher construction stock, and more consistent infrastructure.\n\nNanakramguda, the residential pocket within the Financial District, has developed into a self-contained neighbourhood. A good cross-section of restaurants, a multiplex, and a large supermarket are all within walking distance of most apartment buildings. Outer Ring Road access means getting to the airport or Shamshabad takes under 30 minutes.\n\nRental pricing sits in the mid-to-premium band. A well-furnished 2 BHK in a gated community runs ₹28,000–₹42,000. The tenant mix is heavily professional — finance sector employees, senior tech leads, and expats who appreciate the newer construction and reliable power supply. Nivaas currently manages 4 properties in this zone with plans to expand in 2025.",
     "avg_rent_min": 28000,
     "avg_rent_max": 50000,
-    "it_parks": ["Deloitte Hyderabad", "Accenture Campus", "Amazon Corporate Park", "BSE Institute"],
+    "it_parks": [
+      "Deloitte Hyderabad",
+      "Accenture Campus",
+      "Amazon Corporate Park",
+      "BSE Institute"
+    ],
     "landmarks": ["Nanakramguda Lake", "Sarath City Capital Mall", "ORR Exit 14"],
     "transit": ["TSRTC: Financial District Bus Stop", "Cab aggregators highly accessible"],
-    "image": "/localities/financial-district.jpg"
+    "image": "https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=800&q=80&fit=crop"
   },
   {
     "slug": "kokapet",
@@ -69,7 +77,7 @@
     "it_parks": ["Kokapet Business Park", "Incor One City", "Prestige High Fields (adjacent)"],
     "landmarks": ["ORR Exit 13", "Tellapur Temple", "Narsingi Junction (3 km)"],
     "transit": ["TSRTC: Kokapet X Roads", "ORR direct to airport (25 min)"],
-    "image": "/localities/kokapet.jpg"
+    "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop"
   },
   {
     "slug": "narsingi",
@@ -81,6 +89,6 @@
     "it_parks": ["Financial District (12 km)", "Kokapet Business Hub (8 km)"],
     "landmarks": ["Osman Sagar Reservoir", "DPS Narsingi", "ISB Hyderabad (15 km)"],
     "transit": ["TSRTC: Narsingi X Roads", "ORR access via Kokapet"],
-    "image": "/localities/narsingi.jpg"
+    "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80&fit=crop"
   }
 ]

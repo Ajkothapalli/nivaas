@@ -1,18 +1,12 @@
 import type { Metadata } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-fraunces',
-  display: 'swap',
-})
+import { PHProvider } from '@/components/providers/PostHogProvider'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
 })
@@ -27,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    images: [{ url: '/brand/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   robots: {
     index: process.env.VERCEL_ENV === 'production',
@@ -37,8 +31,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="bg-bg text-ink font-body antialiased">{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className="bg-bg text-ink font-body antialiased">
+        <PHProvider>{children}</PHProvider>
+      </body>
     </html>
   )
 }

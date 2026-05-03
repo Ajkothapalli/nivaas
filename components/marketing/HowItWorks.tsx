@@ -105,7 +105,7 @@ export function HowItWorks() {
         >
           {steps.map((step) => (
             <div key={step.number} className="flex flex-col gap-4">
-              <span className="font-heading font-semibold text-5xl text-accent/20 leading-none">
+              <span className="font-heading font-bold text-4xl text-accent/25 leading-none tabular-nums">
                 {step.number}
               </span>
               <div>

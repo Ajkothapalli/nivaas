@@ -20,7 +20,7 @@ const config: Config = {
         error: '#B23A3A',
       },
       fontFamily: {
-        heading: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {

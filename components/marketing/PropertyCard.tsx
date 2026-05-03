@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { type Property } from '@/lib/validation/property'
 import { formatRent, formatArea, formatBHK } from '@/lib/format'
-import { FURNISHING_LABELS } from '@/lib/constants'
+import { FURNISHING_LABELS, LISTING_TYPE_LABELS, PROPERTY_TYPE_LABELS } from '@/lib/constants'
 
 interface PropertyCardProps {
   property: Property
@@ -22,9 +22,12 @@ export function PropertyCard({ property }: PropertyCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 flex gap-1.5">
           <span className="bg-accent text-white text-xs font-medium px-2.5 py-1 rounded-lg">
-            {FURNISHING_LABELS[property.furnishing]}
+            {LISTING_TYPE_LABELS[property.listing_type]}
+          </span>
+          <span className="bg-ink/70 text-white text-xs font-medium px-2.5 py-1 rounded-lg">
+            {PROPERTY_TYPE_LABELS[property.property_type]}
           </span>
         </div>
       </div>
@@ -43,6 +46,8 @@ export function PropertyCard({ property }: PropertyCardProps) {
           <span>{formatBHK(property.bhk)}</span>
           <span aria-hidden="true">·</span>
           <span>{formatArea(property.area_sqft)}</span>
+          <span aria-hidden="true">·</span>
+          <span>{FURNISHING_LABELS[property.furnishing]}</span>
         </div>
 
         <div className="mt-auto pt-3 border-t border-border flex items-end justify-between">

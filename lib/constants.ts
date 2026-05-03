@@ -26,3 +26,25 @@ export const FURNISHING_LABELS: Record<string, string> = {
   semi_furnished: 'Semi-Furnished',
   unfurnished: 'Unfurnished',
 }
+
+export const PROPERTY_TYPE_LABELS: Record<string, string> = {
+  residential: 'Residential',
+  commercial: 'Commercial',
+}
+
+export const LISTING_TYPE_LABELS: Record<string, string> = {
+  rent: 'Rent',
+  lease: 'Lease',
+  sale: 'Sale',
+}
+
+export const PROPERTY_TYPES = [
+  { value: 'residential', label: 'Residential' },
+  { value: 'commercial', label: 'Commercial' },
+] as const
+
+export const LISTING_TYPES = [
+  { value: 'rent', label: 'Rent' },
+  { value: 'lease', label: 'Lease' },
+  { value: 'sale', label: 'Sale' },
+] as const

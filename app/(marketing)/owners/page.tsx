@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { OwnerLeadForm } from '@/components/marketing/OwnerLeadForm'
+import { EarningsCalculator } from '@/components/marketing/EarningsCalculator'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
-import testimonialsData from '@/data/testimonials.json'
+import { listByType } from '@/lib/repositories/testimonials'
 
 export const metadata: Metadata = {
-  title: 'List Your Property With Nivaas — Guaranteed Monthly Payout',
+  title: 'List Your Property With Nivaas — Professional Property Management',
   description:
-    'Register your Hyderabad property with Nivaas. Receive a guaranteed monthly payout, professional tenant management, and zero maintenance hassle.',
+    'Register your Hyderabad property with Nivaas. Receive a fixed monthly payout, professional tenant management, and zero maintenance effort.',
 }
 
 const BENEFITS = [
@@ -43,9 +44,8 @@ const BENEFITS = [
   },
 ]
 
-const ownerTestimonials = testimonialsData.filter((t) => t.type === 'owner')
-
-export default function OwnersPage() {
+export default async function OwnersPage() {
+  const ownerTestimonials = await listByType('owner')
   return (
     <>
       <Section className="bg-accent pt-20 pb-16">
@@ -55,8 +55,8 @@ export default function OwnersPage() {
               Your Property. Our Responsibility.
             </h1>
             <p className="text-white/80 text-xl leading-relaxed">
-              Register your Hyderabad flat with Nivaas and receive a guaranteed monthly payout
-              while we handle every aspect of tenancy management.
+              Register your Hyderabad flat with Nivaas and receive a guaranteed monthly payout while
+              we handle every aspect of tenancy management.
             </p>
           </div>
         </Container>
@@ -119,7 +119,7 @@ export default function OwnersPage() {
               },
             ].map((step) => (
               <div key={step.n} className="flex flex-col gap-4">
-                <span className="font-heading font-semibold text-5xl text-accent/20 leading-none">
+                <span className="font-heading font-bold text-4xl text-accent/25 leading-none tabular-nums">
                   {step.n}
                 </span>
                 <h3 className="font-medium text-ink text-lg">{step.title}</h3>
@@ -127,6 +127,12 @@ export default function OwnersPage() {
               </div>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-surface">
+        <Container>
+          <EarningsCalculator />
         </Container>
       </Section>
 

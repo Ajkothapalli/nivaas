@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "category": "tenants",
+    "question": "Is there a brokerage fee to rent through Nivaas?",
+    "answer": "No. Nivaas charges no brokerage. You pay the security deposit (typically two months' rent) and the first month's rent — nothing more at move-in."
+  },
+  {
+    "id": 2,
+    "category": "tenants",
+    "question": "What does 'fully managed' mean for tenants?",
+    "answer": "It means a single point of contact for everything related to your home. Maintenance, repairs, appliance issues, WiFi setup — you call or WhatsApp Nivaas, and we handle it within 24 hours. You do not need to track down the owner or deal with multiple contractors."
+  },
+  {
+    "id": 3,
+    "category": "tenants",
+    "question": "What documents do I need to rent?",
+    "answer": "Aadhaar card, PAN card, two recent payslips or a current employment letter, and a passport-size photograph. We do not require police verification from you — we handle that."
+  },
+  {
+    "id": 4,
+    "category": "tenants",
+    "question": "What is the minimum lock-in period?",
+    "answer": "Six months for all properties. After six months, you can vacate with one month's written notice. We believe in giving tenants stability without trapping them."
+  },
+  {
+    "id": 5,
+    "category": "tenants",
+    "question": "How long does the move-in process take after I confirm a property?",
+    "answer": "Typically 3–5 working days. We prepare the rental agreement, verify your KYC, and do a walkthrough with you before handing over the keys. Everything is done digitally where possible."
+  },
+  {
+    "id": 6,
+    "category": "tenants",
+    "question": "Are pets allowed?",
+    "answer": "It depends on the specific property and the owner's preference. Each property listing notes whether pets are permitted. If the listing does not mention it, ask us on WhatsApp before applying."
+  },
+  {
+    "id": 7,
+    "category": "owners",
+    "question": "How does Nivaas make money?",
+    "answer": "Nivaas takes a management fee, a fixed percentage of the monthly rent, charged to the tenant. Owners receive a guaranteed monthly payout regardless of vacancy periods during our contracted tenure."
+  },
+  {
+    "id": 8,
+    "category": "owners",
+    "question": "What is the owner lock-in period?",
+    "answer": "We sign a master lease with you for 12 months, renewable. Within that term, Nivaas guarantees the monthly payout even if the property is briefly vacant between tenant cycles. After 12 months, you can choose not to renew."
+  },
+  {
+    "id": 9,
+    "category": "owners",
+    "question": "Who pays for repairs and maintenance?",
+    "answer": "Minor repairs (under ₹2,000) are handled by Nivaas at no cost to you. For larger repairs, we notify you, share a quote, and proceed with your approval. Structural work remains the owner's responsibility as defined in the master lease."
+  },
+  {
+    "id": 10,
+    "category": "owners",
+    "question": "Will Nivaas modify my property?",
+    "answer": "Only with your explicit written consent. Standard onboarding may involve minor additions — curtain rods, shelves, WiFi router points — but structural or cosmetic changes require your approval before we proceed."
+  },
+  {
+    "id": 11,
+    "category": "owners",
+    "question": "How are tenants screened?",
+    "answer": "Every tenant goes through KYC verification (Aadhaar, PAN), employment verification, and a reference check. We also verify rental history where available. We do not place tenants who have prior eviction records or fraudulent documentation."
+  },
+  {
+    "id": 12,
+    "category": "general",
+    "question": "Which areas does Nivaas currently operate in?",
+    "answer": "Gachibowli, Madhapur, Kondapur, HITEC City, Financial District, Kokapet, and Narsingi. We are expanding into Miyapur and Kukatpally in 2025. If your preferred area is not listed, let us know — we prioritise based on demand."
+  },
+  {
+    "id": 13,
+    "category": "general",
+    "question": "Is Nivaas a registered company?",
+    "answer": "Yes. Nivaas is a registered private limited company in Hyderabad, Telangana. All agreements are stamped and registered as required under the Telangana Rent Control Act."
+  },
+  {
+    "id": 14,
+    "category": "general",
+    "question": "How do I report an issue with my home?",
+    "answer": "WhatsApp us on the number in your welcome kit, or call the operations line. For urgent issues (water leaks, power failure, security concerns), we have a 24-hour response commitment. For routine maintenance, we respond within one business day."
+  },
+  {
+    "id": 15,
+    "category": "tenants",
+    "question": "Can I view a property before committing?",
+    "answer": "Yes, always. We schedule physical visits at a time convenient for you. You will be accompanied by a Nivaas team member who knows the property well and can answer questions on the spot."
+  }
+]

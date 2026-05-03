@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "gachibowli",
+    "name": "Gachibowli",
+    "tagline": "Hyderabad's flagship IT neighbourhood",
+    "description": "Gachibowli sits at the heart of Hyderabad's technology corridor, bounded by the Outer Ring Road to the west and the University of Hyderabad to the north. The area grew steadily through the 2000s as DLF Cyber City, Mindspace, and IIIT Hyderabad established themselves here, and it has since become one of the most professionally dense zip codes in southern India.\n\nFor tenants, the big draw is proximity to work without giving up quality of life. Inorbit Mall, the ISB campus, and a cluster of well-regarded restaurants are all within a 10-minute radius. The roads are wide by Hyderabad standards and the metro's Raidurg station connects the area to the rest of the city in under 30 minutes.\n\nResidential supply runs from mid-tier apartment blocks to gated communities with full amenities. Most working professionals share a 2 or 3 BHK, keeping effective per-person costs reasonable. Nivaas currently manages properties within 3 km of DLF Cyber City in layouts that have consistent water supply and 24-hour power backup.",
+    "avg_rent_min": 28000,
+    "avg_rent_max": 55000,
+    "it_parks": ["DLF Cyber City", "Mindspace Gachibowli", "IIIT Hyderabad", "ISB Hyderabad"],
+    "landmarks": ["Inorbit Mall", "University of Hyderabad", "Shilparamam", "ORR Junction"],
+    "transit": ["Metro: Raidurg (3 km)", "TSRTC Hub: Gachibowli X Roads"],
+    "image": "/localities/gachibowli.jpg"
+  },
+  {
+    "slug": "madhapur",
+    "name": "Madhapur",
+    "tagline": "Where Cyber Towers meets neighbourhood living",
+    "description": "Madhapur is arguably the most central address in Hyderabad's IT belt. Cyber Towers, the original tech anchor, sits at its edge. A dense grid of lanes branches off the main road, packed with cafes, pharmacies, salons, and eateries that cater almost entirely to the working crowd.\n\nThe area is compact and walkable in ways that most of Hyderabad is not. You can walk from many residential pockets to Cyber Towers in under 15 minutes and to Jubilee Hills within 20. This density is a double-edged sword — parking is limited and traffic peaks can be brutal — but tenants who manage without a car find Madhapur unusually convenient.\n\nMajor employers with offices nearby include Google, Facebook, Amazon, Cognizant, and Wipro. Rental prices reflect the demand: a 2 BHK runs ₹22,000–₹35,000 depending on age, floor, and furnishing. Nivaas focuses on buildings with reliable maintenance management, which filters out the older stock and concentrates on post-2010 construction.",
+    "avg_rent_min": 22000,
+    "avg_rent_max": 40000,
+    "it_parks": ["Cyber Towers", "Cyber Pearl", "Raheja Commerzone"],
+    "landmarks": ["Jubilee Hills (adjacent)", "PVR Cinemas", "Forum Sujana Mall"],
+    "transit": ["Metro: Madhapur (walking distance)", "TSRTC: Cyber Towers Bus Stop"],
+    "image": "/localities/madhapur.jpg"
+  },
+  {
+    "slug": "kondapur",
+    "name": "Kondapur",
+    "tagline": "More room, same commute",
+    "description": "Kondapur is the quieter sibling of Madhapur, sitting directly to its north-west. The locality has transformed over the last decade from a mixed residential area into a well-serviced professional neighbourhood. The bonus: you get meaningfully larger apartments at prices 15–20% lower than comparable HITEC City addresses.\n\nThe IT parks of HITEC City and Madhapur are a short commute via the PVNR Expressway, and the Miyapur metro corridor makes weekday travel straightforward. Kondapur's main road has matured into a proper high street — supermarkets, banks, medical clinics, and a range of restaurants from quick-service to sit-down are all present.\n\nFamilies and tenants who value space over maximum proximity to work tend to choose Kondapur. You can realistically get a 3 BHK here for what a 2 BHK costs in Madhapur. Nivaas manages properties in the Kothaguda and Rainbow Vistas layouts, both of which have good maintenance track records.",
+    "avg_rent_min": 20000,
+    "avg_rent_max": 38000,
+    "it_parks": ["HITEC City (adjacent)", "Lanco Hills", "Aparna Cyber Life"],
+    "landmarks": ["Botanical Gardens", "Kothaguda X Roads", "Apollo Pharmacy Hub"],
+    "transit": ["Metro: Kothaguda (2 km)", "TSRTC: Kondapur X Roads"],
+    "image": "/localities/kondapur.jpg"
+  },
+  {
+    "slug": "hitec-city",
+    "name": "HITEC City",
+    "tagline": "Hyderabad's original tech district",
+    "description": "HITEC City — formally Hyderabad Information Technology and Engineering Consultancy City — is the name that put Hyderabad's IT industry on the global map. The original Mindspace towers here still house some of the largest tech employers in the country, and the wider area has evolved into a premium residential and commercial zone that shows no signs of slowing down.\n\nLiving in HITEC City proper means premium pricing, but also premium infrastructure. The roads are among the most reliably maintained in the city. The Miyapur and Raidurg metro lines both have stations within range. The high-street dining and retail options along the main road are the most developed outside of Jubilee Hills and Banjara Hills.\n\nFor Nivaas, HITEC City is our flagship zone. Properties here attract professionals from Wipro, Microsoft, Amazon, and the big consulting firms who want a zero-commute life. We focus on gated communities with full amenities — gym, pool, round-the-clock security — and manage every maintenance request in-house.",
+    "avg_rent_min": 25000,
+    "avg_rent_max": 60000,
+    "it_parks": ["Mindspace HITEC City", "Salarpuria Sattva", "Q City", "Tata Consultancy"],
+    "landmarks": ["HITEC City Metro Station", "Inorbit Mall", "Cyber Pearl"],
+    "transit": ["Metro: HITEC City Station (walking distance)", "TSRTC express routes to Secunderabad"],
+    "image": "/localities/hitec-city.jpg"
+  },
+  {
+    "slug": "financial-district",
+    "name": "Financial District",
+    "tagline": "Where banking and tech share a postcode",
+    "description": "The Financial District occupies the stretch between Gachibowli and Narsingi, dominated by the gleaming campuses of Deloitte, Accenture, Amazon, and the BSE's Hyderabad operations. It is newer than HITEC City and consequently has wider roads, fresher construction stock, and more consistent infrastructure.\n\nNanakramguda, the residential pocket within the Financial District, has developed into a self-contained neighbourhood. A good cross-section of restaurants, a multiplex, and a large supermarket are all within walking distance of most apartment buildings. Outer Ring Road access means getting to the airport or Shamshabad takes under 30 minutes.\n\nRental pricing sits in the mid-to-premium band. A well-furnished 2 BHK in a gated community runs ₹28,000–₹42,000. The tenant mix is heavily professional — finance sector employees, senior tech leads, and expats who appreciate the newer construction and reliable power supply. Nivaas currently manages 4 properties in this zone with plans to expand in 2025.",
+    "avg_rent_min": 28000,
+    "avg_rent_max": 50000,
+    "it_parks": ["Deloitte Hyderabad", "Accenture Campus", "Amazon Corporate Park", "BSE Institute"],
+    "landmarks": ["Nanakramguda Lake", "Sarath City Capital Mall", "ORR Exit 14"],
+    "transit": ["TSRTC: Financial District Bus Stop", "Cab aggregators highly accessible"],
+    "image": "/localities/financial-district.jpg"
+  },
+  {
+    "slug": "kokapet",
+    "name": "Kokapet",
+    "tagline": "The new frontier of Hyderabad's west",
+    "description": "Kokapet is Hyderabad's fastest-growing residential zone. Three years ago it was primarily construction sites and open plots. Today it has multiple gated communities, a functional high street, and a catchment of working professionals who have been priced out of HITEC City and Gachibowli but want equivalent infrastructure.\n\nThe Outer Ring Road runs directly past Kokapet, putting both the Financial District and the Shamshabad airport within practical commuting distance. A handful of tech companies have relocated or expanded to the Kokapet-Narsingi-Tellapur belt specifically because land prices allow them to build larger, lower-density campuses.\n\nFor tenants, Kokapet today represents a value proposition that HITEC City offered a decade ago. You get newer construction, more amenities per rupee, and communities that are genuinely managed rather than neglected. The tradeoff is that retail and dining options are thinner — most residents shop at the larger malls in Gachibowli or Narsingi. Nivaas began managing Kokapet properties in early 2024 and sees this as a priority growth zone.",
+    "avg_rent_min": 18000,
+    "avg_rent_max": 38000,
+    "it_parks": ["Kokapet Business Park", "Incor One City", "Prestige High Fields (adjacent)"],
+    "landmarks": ["ORR Exit 13", "Tellapur Temple", "Narsingi Junction (3 km)"],
+    "transit": ["TSRTC: Kokapet X Roads", "ORR direct to airport (25 min)"],
+    "image": "/localities/kokapet.jpg"
+  },
+  {
+    "slug": "narsingi",
+    "name": "Narsingi",
+    "tagline": "Quiet, green, and 20 minutes from everything",
+    "description": "Narsingi occupies a comfortable position on the city map — close enough to both the Financial District and Kokapet employment hubs to make commuting practical, but far enough from the main HITEC City corridor to retain a residential feel that other neighbourhoods have long since lost.\n\nThe area's big selling point is greenery. Narsingi sits adjacent to the Osman Sagar reservoir catchment zone, and many apartment buildings have unobstructed views of open land or water. The air quality and noise levels are measurably better than the interior IT belt. Several international school campuses have located here, making it a popular choice for families with children.\n\nPricing is the most affordable among the neighbourhoods Nivaas operates in. A 3 BHK that would cost ₹40,000 in HITEC City often comes in at ₹28,000–₹32,000 here. The trade-off is that you are dependent on a vehicle for most errands. Nivaas focuses on gated communities with strong society management, which in Narsingi means buildings that have invested in backup systems rather than relying on erratic municipal supply.",
+    "avg_rent_min": 15000,
+    "avg_rent_max": 32000,
+    "it_parks": ["Financial District (12 km)", "Kokapet Business Hub (8 km)"],
+    "landmarks": ["Osman Sagar Reservoir", "DPS Narsingi", "ISB Hyderabad (15 km)"],
+    "transit": ["TSRTC: Narsingi X Roads", "ORR access via Kokapet"],
+    "image": "/localities/narsingi.jpg"
+  }
+]

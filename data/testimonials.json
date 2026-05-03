@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "type": "tenant",
+    "name": "Priya Sharma",
+    "role": "Senior Software Engineer, Microsoft",
+    "locality": "hitec-city",
+    "quote": "I moved from Bangalore and had three weeks to find a flat. Nivaas sorted everything in five days — the paperwork, the keys, even the internet setup. First time I've rented without a broker in Hyderabad.",
+    "avatar": "/brand/avatar-placeholder.svg"
+  },
+  {
+    "id": 2,
+    "type": "tenant",
+    "name": "Rohit and Ananya Mehta",
+    "role": "Both work in Financial District",
+    "locality": "gachibowli",
+    "quote": "The maintenance response is what stands out. We had a geyser issue at 9pm on a Sunday. Nivaas had someone there by 10am Monday. Previous landlords took two weeks for simple repairs.",
+    "avatar": "/brand/avatar-placeholder.svg"
+  },
+  {
+    "id": 3,
+    "type": "tenant",
+    "name": "Karthik Reddy",
+    "role": "Associate Consultant, Deloitte",
+    "locality": "financial-district",
+    "quote": "No brokerage, proper agreement, decent furniture, and someone who picks up the phone when I call. That is genuinely all I wanted. Nivaas delivers.",
+    "avatar": "/brand/avatar-placeholder.svg"
+  },
+  {
+    "id": 4,
+    "type": "owner",
+    "name": "Venkat Rao",
+    "role": "Property owner, Madhapur",
+    "locality": "madhapur",
+    "quote": "I live in the US and needed someone I could trust to manage my apartment in Hyderabad. The monthly payout arrives on time and I get a call before any significant repair. I have not had to fly back for a single property issue in two years.",
+    "avatar": "/brand/avatar-placeholder.svg"
+  },
+  {
+    "id": 5,
+    "type": "owner",
+    "name": "Lakshmi Prasad",
+    "role": "Retired, two properties in Kondapur",
+    "locality": "kondapur",
+    "quote": "The previous tenants I found myself were problematic — delayed rent, damage on exit. Nivaas took over both flats. I get paid on the 5th of every month without chasing anyone. The homes are in better condition than when I handed them over.",
+    "avatar": "/brand/avatar-placeholder.svg"
+  }
+]

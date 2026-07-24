@@ -11,7 +11,8 @@ const FOOTER_LINKS = {
     { href: '/localities/financial-district', label: 'Financial District' },
   ],
   Company: [
-    { href: '/about', label: 'About Nivaas' },
+    { href: '/about', label: 'About Estate360' },
+    { href: '/services', label: 'Services' },
     { href: '/how-it-works', label: 'How it works' },
     { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact us' },
@@ -30,8 +31,8 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Image
               src="/brand/logo-white.svg"
-              alt="Nivaas"
-              width={100}
+              alt="Estate360"
+              width={125}
               height={28}
               className="mb-4"
             />
@@ -40,7 +41,7 @@ export function Footer() {
               brokerage.
             </p>
             <p className="mt-4 text-xs text-white/40">
-              Nivaas Property Management Pvt. Ltd.
+              Estate360 Property Management Pvt. Ltd.
               <br />
               Hyderabad, Telangana 500032
             </p>
@@ -69,7 +70,7 @@ export function Footer() {
 
         <div className="py-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Nivaas Property Management Pvt. Ltd. All rights
+            &copy; {new Date().getFullYear()} Estate360 Property Management Pvt. Ltd. All rights
             reserved.
           </p>
           <p className="text-xs text-white/40">Made with care in Hyderabad</p>

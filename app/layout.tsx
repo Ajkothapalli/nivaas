@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
 import { PHProvider } from '@/components/providers/PostHogProvider'
@@ -11,13 +11,20 @@ const inter = Inter({
   display: 'swap',
 })
 
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-jakarta',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: {
     default: `${SITE_NAME} — Managed Rental Homes in Hyderabad`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nivaas.in'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'),
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
@@ -31,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
       <body className="bg-bg text-ink font-body antialiased">
         <PHProvider>{children}</PHProvider>
       </body>

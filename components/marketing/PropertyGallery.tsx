@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { resizeImage } from '@/lib/image'
 
 interface PropertyGalleryProps {
   images: string[]
@@ -55,7 +56,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
             aria-label={`View ${title} gallery image ${i + 2}`}
           >
             <Image
-              src={src}
+              src={resizeImage(src, 500)}
               alt={`${title} — photo ${i + 2}`}
               fill
               sizes="25vw"
@@ -95,7 +96,15 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
               aria-label="Previous photo"
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
@@ -105,7 +114,15 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
               aria-label="Next photo"
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
@@ -115,7 +132,15 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
               aria-label="Close gallery"
               className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>

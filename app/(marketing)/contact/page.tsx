@@ -5,16 +5,16 @@ import { Section } from '@/components/ui/Section'
 import { whatsappLink } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
-  title: 'Contact Nivaas — Hyderabad Property Management',
+  title: 'Contact Estate360 — Hyderabad Property Management',
   description:
-    'Get in touch with Nivaas for managed rental homes in Hyderabad. Call, WhatsApp, or fill in the form.',
+    'Get in touch with Estate360 for managed rental homes in Hyderabad. Call, WhatsApp, or fill in the form.',
 }
 
 export default function ContactPage() {
-  const waLink = whatsappLink({ message: "Hi, I'd like to get in touch with Nivaas." })
+  const waLink = whatsappLink({ message: "Hi, I'd like to get in touch with Estate360." })
 
   return (
-    <Section className="pt-14">
+    <Section className="pt-14 md:pt-14">
       <Container>
         <div className="max-w-4xl">
           <h1 className="font-heading font-semibold text-ink text-4xl mb-3">Get in Touch</h1>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                     <dt className="text-xs text-ink-muted uppercase tracking-wide mb-0.5">
                       Registered name
                     </dt>
-                    <dd className="text-ink">Nivaas Property Management Pvt. Ltd.</dd>
+                    <dd className="text-ink">Estate360 Property Management Pvt. Ltd.</dd>
                   </div>
                   <div>
                     <dt className="text-xs text-ink-muted uppercase tracking-wide mb-0.5">
@@ -60,15 +60,13 @@ export default function ContactPage() {
                     <dd className="text-ink">Hyderabad, Telangana 500032</dd>
                   </div>
                   <div>
-                    <dt className="text-xs text-ink-muted uppercase tracking-wide mb-0.5">
-                      Email
-                    </dt>
+                    <dt className="text-xs text-ink-muted uppercase tracking-wide mb-0.5">Email</dt>
                     <dd>
                       <a
-                        href="mailto:hello@nivaas.in"
+                        href="mailto:hello@estate360.in"
                         className="text-accent hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
                       >
-                        hello@nivaas.in
+                        hello@estate360.in
                       </a>
                     </dd>
                   </div>

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Nivaas — Managed Rental Homes in Hyderabad'
+export const alt = 'Estate360 — Managed Rental Homes in Hyderabad'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -31,7 +31,7 @@ export default async function Image() {
             letterSpacing: '-1px',
           }}
         >
-          Nivaas
+          Estate360
         </div>
         <div
           style={{
@@ -50,7 +50,7 @@ export default async function Image() {
             color: 'rgba(255,255,255,0.5)',
           }}
         >
-          nivaas.in
+          estate360.in
         </div>
       </div>
     ),

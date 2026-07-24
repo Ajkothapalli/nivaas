@@ -1,4 +1,4 @@
-# Nivaas — Architecture
+# Estate360 — Architecture
 
 This document is the authoritative architectural reference. All PRs should be reviewed against it.
 
@@ -42,6 +42,7 @@ The flag scaffold exists now. The Supabase query paths are stubs — implement t
 `/api/inquiries` and `/api/owner-leads` are the only two active routes at M0.
 
 Both:
+
 - Accept POST only
 - Validate with Zod
 - Include a honeypot field for bot protection

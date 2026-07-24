@@ -36,6 +36,8 @@ Thumbs.db
 
 # Tooling
 .claude/
+.agents/
+skills-lock.json
 gh.zip
 gh_2.48.0_macOS_arm64/
 

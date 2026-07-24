@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { SITE_NAME, SITE_DESCRIPTION } from './constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nivaas.in'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
 
 export function buildMetadata(opts: {
   title: string

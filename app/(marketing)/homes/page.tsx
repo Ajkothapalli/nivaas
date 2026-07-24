@@ -8,6 +8,7 @@ import { LOCALITIES, BUDGET_RANGES, PROPERTY_TYPES, LISTING_TYPES } from '@/lib/
 import { type Property } from '@/lib/validation/property'
 import { whatsappLink } from '@/lib/whatsapp'
 import { Select } from '@/components/ui/Select'
+import { Reveal } from '@/components/ui/Reveal'
 
 export const metadata: Metadata = {
   title: 'Browse Managed Rental Homes in Hyderabad',
@@ -43,7 +44,7 @@ export default async function HomesPage({ searchParams }: { searchParams: Search
 
   return (
     <>
-      <Section className="pb-0 pt-14">
+      <Section className="pb-0 md:pb-0 pt-14 md:pt-14">
         <Container>
           <h1 className="font-heading font-semibold text-ink text-3xl md:text-4xl mb-2">
             Homes Available Now
@@ -152,12 +153,14 @@ export default async function HomesPage({ searchParams }: { searchParams: Search
         </Container>
       </Section>
 
-      <Section className="pt-10">
+      <Section className="pt-10 md:pt-10">
         <Container>
           {filtered.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((property) => (
-                <PropertyCard key={property.id} property={property} />
+              {filtered.map((property, i) => (
+                <Reveal key={property.id} delay={(i % 6) * 80}>
+                  <PropertyCard property={property} />
+                </Reveal>
               ))}
             </div>
           ) : (

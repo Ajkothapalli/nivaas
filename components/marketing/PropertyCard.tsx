@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { type Property } from '@/lib/validation/property'
 import { formatRent, formatArea, formatBHK } from '@/lib/format'
 import { FURNISHING_LABELS, LISTING_TYPE_LABELS, PROPERTY_TYPE_LABELS } from '@/lib/constants'
+import { resizeImage } from '@/lib/image'
 
 interface PropertyCardProps {
   property: Property
@@ -12,11 +13,11 @@ export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Link
       href={`/homes/${property.slug}`}
-      className="group flex flex-col bg-surface rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      className="group flex flex-col bg-surface rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
-          src={property.images[0]}
+          src={resizeImage(property.images[0], 900)}
           alt={`${property.title} — living area`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -43,11 +44,36 @@ export function PropertyCard({ property }: PropertyCardProps) {
         </div>
 
         <div className="flex items-center gap-4 text-sm text-ink-muted">
-          <span>{formatBHK(property.bhk)}</span>
-          <span aria-hidden="true">·</span>
-          <span>{formatArea(property.area_sqft)}</span>
-          <span aria-hidden="true">·</span>
-          <span>{FURNISHING_LABELS[property.furnishing]}</span>
+          <span className="flex items-center gap-1.5">
+            <Image
+              src="/Images/icons/bed-3d.png"
+              alt=""
+              width={20}
+              height={20}
+              aria-hidden="true"
+            />
+            {formatBHK(property.bhk)}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Image
+              src="/Images/icons/area-3d.png"
+              alt=""
+              width={20}
+              height={20}
+              aria-hidden="true"
+            />
+            {formatArea(property.area_sqft)}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Image
+              src="/Images/icons/couch-3d.png"
+              alt=""
+              width={20}
+              height={20}
+              aria-hidden="true"
+            />
+            {FURNISHING_LABELS[property.furnishing]}
+          </span>
         </div>
 
         <div className="mt-auto pt-3 border-t border-border flex items-end justify-between">

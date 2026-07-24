@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { type LocalityData } from '@/lib/validation/locality'
 import { formatRent } from '@/lib/format'
+import { resizeImage } from '@/lib/image'
 
 interface LocalityCardProps {
   locality: LocalityData
@@ -11,10 +12,10 @@ export function LocalityCard({ locality }: LocalityCardProps) {
   return (
     <Link
       href={`/localities/${locality.slug}`}
-      className="group relative flex flex-col justify-end rounded-2xl overflow-hidden aspect-[3/2] shadow-sm hover:shadow-md transition-shadow duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      className="group relative flex flex-col justify-end rounded-2xl overflow-hidden aspect-[3/2] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       <Image
-        src={locality.image}
+        src={resizeImage(locality.image, 900)}
         alt={`${locality.name} neighbourhood in Hyderabad`}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

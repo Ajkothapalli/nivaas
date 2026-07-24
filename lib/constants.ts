@@ -1,4 +1,4 @@
-export const SITE_NAME = 'Nivaas'
+export const SITE_NAME = 'Estate360'
 export const SITE_DESCRIPTION =
   'Fully managed rental homes in Hyderabad. No brokerage. Single point of contact. Move in without the hassle.'
 

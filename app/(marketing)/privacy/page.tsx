@@ -4,12 +4,12 @@ import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Nivaas privacy policy — how we collect, use, and protect your personal data.',
+  description: 'Estate360 privacy policy — how we collect, use, and protect your personal data.',
 }
 
 export default function PrivacyPage() {
   return (
-    <Section className="pt-14">
+    <Section className="pt-14 md:pt-14">
       <Container>
         <article className="max-w-2xl prose-sm text-ink-muted leading-relaxed">
           <h1 className="font-heading font-semibold text-ink text-4xl mb-3 not-prose">
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="font-heading font-medium text-ink text-xl mb-3">1. Who we are</h2>
               <p>
-                Nivaas Property Management Pvt. Ltd. (&ldquo;Nivaas&rdquo;, &ldquo;we&rdquo;,
+                Estate360 Property Management Pvt. Ltd. (&ldquo;Estate360&rdquo;, &ldquo;we&rdquo;,
                 &ldquo;us&rdquo;) operates this website. Our registered address is in Hyderabad,
                 Telangana, India.
               </p>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
               <p>
                 We use the information you provide to respond to your inquiry, schedule property
                 visits, and — if you become a tenant or registered owner — to administer your
-                relationship with Nivaas. We do not sell or share your personal data with third
+                relationship with Estate360. We do not sell or share your personal data with third
                 parties for marketing purposes.
               </p>
             </section>
@@ -62,11 +62,8 @@ export default function PrivacyPage() {
               <p>
                 You may request access to, correction of, or deletion of any personal data we hold
                 about you. To exercise these rights, email us at{' '}
-                <a
-                  href="mailto:privacy@nivaas.in"
-                  className="text-accent hover:underline"
-                >
-                  privacy@nivaas.in
+                <a href="mailto:privacy@estate360.in" className="text-accent hover:underline">
+                  privacy@estate360.in
                 </a>
                 . We will respond within 30 days.
               </p>
@@ -94,8 +91,8 @@ export default function PrivacyPage() {
               <h2 className="font-heading font-medium text-ink text-xl mb-3">8. Contact</h2>
               <p>
                 For privacy queries, email{' '}
-                <a href="mailto:privacy@nivaas.in" className="text-accent hover:underline">
-                  privacy@nivaas.in
+                <a href="mailto:privacy@estate360.in" className="text-accent hover:underline">
+                  privacy@estate360.in
                 </a>
                 .
               </p>

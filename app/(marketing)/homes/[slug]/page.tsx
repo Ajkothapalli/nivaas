@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
+import { CalendarDays } from 'lucide-react'
 import { PropertyGallery } from '@/components/marketing/PropertyGallery'
 import { PropertyCard } from '@/components/marketing/PropertyCard'
 import { Container } from '@/components/ui/Container'
@@ -40,7 +42,7 @@ export default async function PropertyDetailPage({ params }: Props) {
   const property = await getBySlug(params.slug)
   if (!property) notFound()
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nivaas.in'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
   const propertyUrl = `${siteUrl}/homes/${property.slug}`
 
   const [relatedRaw] = await Promise.all([listByLocality(property.locality)])
@@ -59,7 +61,7 @@ export default async function PropertyDetailPage({ params }: Props) {
         }}
       />
 
-      <Section className="pt-10 pb-0">
+      <Section className="pt-10 md:pt-10 pb-0 md:pb-0">
         <Container>
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 text-sm text-ink-muted">
@@ -85,7 +87,7 @@ export default async function PropertyDetailPage({ params }: Props) {
         </Container>
       </Section>
 
-      <Section className="pt-10">
+      <Section className="pt-10 md:pt-10">
         <Container>
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
             {/* Main content */}
@@ -99,18 +101,43 @@ export default async function PropertyDetailPage({ params }: Props) {
 
               <div className="flex flex-wrap items-center gap-4 text-ink-muted mb-8">
                 <span className="flex items-center gap-1.5">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
+                  <Image
+                    src="/Images/icons/bed-3d.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden="true"
+                  />
                   {formatBHK(property.bhk)}
                 </span>
-                <span aria-hidden="true">·</span>
-                <span>{formatArea(property.area_sqft)}</span>
-                <span aria-hidden="true">·</span>
-                <span>{FURNISHING_LABELS[property.furnishing]}</span>
-                <span aria-hidden="true">·</span>
-                <span>Available from {formatDate(property.available_from)}</span>
+                <span className="flex items-center gap-1.5">
+                  <Image
+                    src="/Images/icons/area-3d.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden="true"
+                  />
+                  {formatArea(property.area_sqft)}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Image
+                    src="/Images/icons/couch-3d.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden="true"
+                  />
+                  {FURNISHING_LABELS[property.furnishing]}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CalendarDays
+                    className="w-4 h-4 text-ink-muted/70"
+                    aria-hidden="true"
+                    strokeWidth={1.75}
+                  />
+                  Available from {formatDate(property.available_from)}
+                </span>
               </div>
 
               <div className="prose prose-sm max-w-none text-ink-muted leading-relaxed mb-10">
@@ -126,7 +153,16 @@ export default async function PropertyDetailPage({ params }: Props) {
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {property.amenities.map((amenity) => (
                     <li key={amenity} className="flex items-center gap-2 text-sm text-ink-muted">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent flex-shrink-0" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-accent flex-shrink-0"
+                        aria-hidden="true"
+                      >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                       {amenity}

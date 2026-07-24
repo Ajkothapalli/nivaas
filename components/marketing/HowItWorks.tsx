@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
+import { Reveal } from '@/components/ui/Reveal'
 
 const TENANT_STEPS = [
   {
@@ -15,7 +16,7 @@ const TENANT_STEPS = [
     number: '02',
     title: 'Visit and confirm',
     description:
-      'Schedule a visit at a time that works for you. A Nivaas team member accompanies you, answers every question, and helps you compare options.',
+      'Schedule a visit at a time that works for you. A Estate360 team member accompanies you, answers every question, and helps you compare options.',
   },
   {
     number: '03',
@@ -42,7 +43,7 @@ const OWNER_STEPS = [
     number: '03',
     title: 'We handle everything',
     description:
-      'Tenant sourcing, agreement, maintenance, renewals — all managed by Nivaas. You get monthly statements and a call before any significant repair.',
+      'Tenant sourcing, agreement, maintenance, renewals — all managed by Estate360. You get monthly statements and a call before any significant repair.',
   },
 ]
 
@@ -53,7 +54,7 @@ export function HowItWorks() {
   return (
     <Section className="bg-bg" id="how-it-works">
       <Container>
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <h2 className="font-heading font-semibold text-ink text-3xl md:text-4xl mb-4">
             How It Works
           </h2>
@@ -72,7 +73,7 @@ export function HowItWorks() {
               id="tab-tenants"
               aria-controls="panel-tenants"
               onClick={() => setTab('tenants')}
-              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 tab === 'tenants'
                   ? 'bg-accent text-white shadow-sm'
                   : 'text-ink-muted hover:text-ink'
@@ -86,7 +87,7 @@ export function HowItWorks() {
               id="tab-owners"
               aria-controls="panel-owners"
               onClick={() => setTab('owners')}
-              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                 tab === 'owners'
                   ? 'bg-accent text-white shadow-sm'
                   : 'text-ink-muted hover:text-ink'
@@ -95,13 +96,14 @@ export function HowItWorks() {
               For owners
             </button>
           </div>
-        </div>
+        </Reveal>
 
         <div
+          key={tab}
           id={`panel-${tab}`}
           role="tabpanel"
           aria-labelledby={`tab-${tab}`}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-8 animate-fade-in"
         >
           {steps.map((step) => (
             <div key={step.number} className="flex flex-col gap-4">

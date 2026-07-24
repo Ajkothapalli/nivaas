@@ -5,12 +5,12 @@ import { Section } from '@/components/ui/Section'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
-    'Terms and conditions for using the Nivaas website and managed rental services in Hyderabad.',
+    'Terms and conditions for using the Estate360 website and managed rental services in Hyderabad.',
 }
 
 export default function TermsPage() {
   return (
-    <Section className="pt-14">
+    <Section className="pt-14 md:pt-14">
       <Container>
         <article className="max-w-2xl text-ink-muted leading-relaxed">
           <h1 className="font-heading font-semibold text-ink text-4xl mb-3 not-prose">
@@ -24,19 +24,17 @@ export default function TermsPage() {
                 1. Agreement to terms
               </h2>
               <p>
-                By accessing this website or using Nivaas services, you agree to be bound by these
-                terms. If you do not agree, please do not use the site.
+                By accessing this website or using Estate360 services, you agree to be bound by
+                these terms. If you do not agree, please do not use the site.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading font-medium text-ink text-xl mb-3">
-                2. Website use
-              </h2>
+              <h2 className="font-heading font-medium text-ink text-xl mb-3">2. Website use</h2>
               <p>
                 This website is for informational purposes and to facilitate enquiries about managed
                 rental properties. You may browse and submit enquiries. You may not scrape, copy, or
-                reuse any listing content or data without written permission from Nivaas.
+                reuse any listing content or data without written permission from Estate360.
               </p>
             </section>
 
@@ -53,9 +51,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-heading font-medium text-ink text-xl mb-3">
-                4. Service terms
-              </h2>
+              <h2 className="font-heading font-medium text-ink text-xl mb-3">4. Service terms</h2>
               <p>
                 Specific terms for tenant subleases and owner master leases are contained in those
                 separate agreements. In the event of conflict between these website terms and a
@@ -68,17 +64,15 @@ export default function TermsPage() {
                 5. Limitation of liability
               </h2>
               <p>
-                Nivaas Property Management Pvt. Ltd. is not liable for any indirect, incidental, or
-                consequential damages arising from use of this website. Our liability in any
+                Estate360 Property Management Pvt. Ltd. is not liable for any indirect, incidental,
+                or consequential damages arising from use of this website. Our liability in any
                 circumstance is limited to the amount paid by you for the specific service giving
                 rise to the claim.
               </p>
             </section>
 
             <section>
-              <h2 className="font-heading font-medium text-ink text-xl mb-3">
-                6. Governing law
-              </h2>
+              <h2 className="font-heading font-medium text-ink text-xl mb-3">6. Governing law</h2>
               <p>
                 These terms are governed by the laws of India. Any disputes shall be subject to the
                 jurisdiction of courts in Hyderabad, Telangana.
@@ -89,8 +83,8 @@ export default function TermsPage() {
               <h2 className="font-heading font-medium text-ink text-xl mb-3">7. Contact</h2>
               <p>
                 For questions about these terms, email{' '}
-                <a href="mailto:legal@nivaas.in" className="text-accent hover:underline">
-                  legal@nivaas.in
+                <a href="mailto:legal@estate360.in" className="text-accent hover:underline">
+                  legal@estate360.in
                 </a>
                 .
               </p>

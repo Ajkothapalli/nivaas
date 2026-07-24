@@ -2,11 +2,12 @@ import { MetadataRoute } from 'next'
 import { listAvailable } from '@/lib/repositories/properties'
 import { listAll as listLocalities } from '@/lib/repositories/localities'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nivaas.in'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
 
 const STATIC_PAGES = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },
   { path: '/homes', priority: 0.9, changeFrequency: 'daily' as const },
+  { path: '/services', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/owners', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/tenants', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/how-it-works', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -18,12 +19,14 @@ const STATIC_PAGES = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [properties, localities] = await Promise.all([listAvailable(), listLocalities()])
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_PAGES.map(({ path, priority, changeFrequency }) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: new Date(),
-    changeFrequency,
-    priority,
-  }))
+  const staticEntries: MetadataRoute.Sitemap = STATIC_PAGES.map(
+    ({ path, priority, changeFrequency }) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+    })
+  )
 
   const propertyEntries: MetadataRoute.Sitemap = properties.map((p) => ({
     url: `${SITE_URL}/homes/${p.slug}`,

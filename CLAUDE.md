@@ -1,8 +1,8 @@
-# Nivaas — Claude Code Context
+# Estate360 — Claude Code Context
 
 ## What this is
 
-Nivaas is a managed rental property platform for Hyderabad, India. M0 (now) ships as a marketing website backed by JSON data. The same codebase grows into a full app over 18 months: tenant accounts (M6), online rent payments (M12), owner dashboard (M18).
+Estate360 is a managed rental property platform for Hyderabad, India. M0 (now) ships as a marketing website backed by JSON data. The same codebase grows into a full app over 18 months: tenant accounts (M6), online rent payments (M12), owner dashboard (M18).
 
 The repo is designed for that trajectory. Architecture decisions made today must not block future milestones.
 
@@ -41,16 +41,16 @@ Warm, plain English. Confident, never salesy. Indian English spellings (organisa
 
 ## Design tokens (Tailwind)
 
-| Token | Value |
-|---|---|
-| `bg` | `#FAFAF7` — page background |
-| `surface` | `#FFFFFF` — card backgrounds |
-| `ink` | `#1A1A1A` — primary text |
-| `ink-muted` | `#5C5C5C` — secondary text |
-| `accent` | `#2D4A3E` — brand green |
-| `accent-hover` | `#243C32` |
-| `border` | `#E8E6DF` |
-| `error` | `#B23A3A` |
+| Token          | Value                        |
+| -------------- | ---------------------------- |
+| `bg`           | `#FAFAF7` — page background  |
+| `surface`      | `#FFFFFF` — card backgrounds |
+| `ink`          | `#1A1A1A` — primary text     |
+| `ink-muted`    | `#5C5C5C` — secondary text   |
+| `accent`       | `#2D4A3E` — brand green      |
+| `accent-hover` | `#243C32`                    |
+| `border`       | `#E8E6DF`                    |
+| `error`        | `#B23A3A`                    |
 
 **Fonts:** Fraunces (headings, `--font-fraunces`), Inter (body, `--font-inter`)
 
@@ -65,13 +65,21 @@ Never hardcode hex values. Always use Tailwind tokens.
 ## Data shapes (Zod schemas)
 
 ### Property
+
 ```typescript
 PropertySchema = z.object({
   id: z.string().uuid(),
   slug: z.string().regex(/^[a-z0-9-]+$/),
   title: z.string().min(10).max(120),
-  locality: z.enum(['gachibowli', 'madhapur', 'kondapur', 'hitec-city',
-                    'financial-district', 'kokapet', 'narsingi']),
+  locality: z.enum([
+    'gachibowli',
+    'madhapur',
+    'kondapur',
+    'hitec-city',
+    'financial-district',
+    'kokapet',
+    'narsingi',
+  ]),
   address_line: z.string(),
   lat: z.number(),
   lng: z.number(),
@@ -109,20 +117,21 @@ When `NEXT_PUBLIC_USE_DB=true`, repositories should switch to Supabase. Build th
 
 ## Page inventory
 
-| Route | File |
-|---|---|
-| `/` | `app/(marketing)/page.tsx` |
-| `/homes` | `app/(marketing)/homes/page.tsx` |
-| `/homes/[slug]` | `app/(marketing)/homes/[slug]/page.tsx` |
+| Route                | File                                         |
+| -------------------- | -------------------------------------------- |
+| `/`                  | `app/(marketing)/page.tsx`                   |
+| `/homes`             | `app/(marketing)/homes/page.tsx`             |
+| `/homes/[slug]`      | `app/(marketing)/homes/[slug]/page.tsx`      |
 | `/localities/[slug]` | `app/(marketing)/localities/[slug]/page.tsx` |
-| `/owners` | `app/(marketing)/owners/page.tsx` |
-| `/tenants` | `app/(marketing)/tenants/page.tsx` |
-| `/how-it-works` | `app/(marketing)/how-it-works/page.tsx` |
-| `/about` | `app/(marketing)/about/page.tsx` |
-| `/faq` | `app/(marketing)/faq/page.tsx` |
-| `/contact` | `app/(marketing)/contact/page.tsx` |
-| `/privacy` | `app/(marketing)/privacy/page.tsx` |
-| `/terms` | `app/(marketing)/terms/page.tsx` |
+| `/owners`            | `app/(marketing)/owners/page.tsx`            |
+| `/tenants`           | `app/(marketing)/tenants/page.tsx`           |
+| `/services`          | `app/(marketing)/services/page.tsx`          |
+| `/how-it-works`      | `app/(marketing)/how-it-works/page.tsx`      |
+| `/about`             | `app/(marketing)/about/page.tsx`             |
+| `/faq`               | `app/(marketing)/faq/page.tsx`               |
+| `/contact`           | `app/(marketing)/contact/page.tsx`           |
+| `/privacy`           | `app/(marketing)/privacy/page.tsx`           |
+| `/terms`             | `app/(marketing)/terms/page.tsx`             |
 
 `app/(app)/` is empty — do not build it.
 
@@ -144,6 +153,7 @@ When `NEXT_PUBLIC_USE_DB=true`, repositories should switch to Supabase. Build th
 ## Non-negotiables
 
 **Performance:**
+
 - LCP < 2.0s (simulated 4G)
 - CLS < 0.05
 - Initial JS < 100KB gzipped
@@ -151,6 +161,7 @@ When `NEXT_PUBLIC_USE_DB=true`, repositories should switch to Supabase. Build th
 - Hero images with `priority` prop
 
 **Accessibility (WCAG 2.1 AA):**
+
 - Alt text on every image (real descriptive text)
 - Form labels tied to inputs
 - Error messages via `aria-describedby`
@@ -158,6 +169,7 @@ When `NEXT_PUBLIC_USE_DB=true`, repositories should switch to Supabase. Build th
 - `prefers-reduced-motion` respected
 
 **SEO:**
+
 - Unique title + description per page
 - OpenGraph + Twitter card on every page
 - Sitemap at `/sitemap.xml`
@@ -171,6 +183,7 @@ When `NEXT_PUBLIC_USE_DB=true`, repositories should switch to Supabase. Build th
 See `.claude/skills/property-page/SKILL.md` for the complete workflow.
 
 Short version:
+
 1. Add entry to `data/properties.json` following the PropertySchema
 2. Place images in `/public/properties/[slug]/` (min 4, max 10, < 200KB each)
 3. Run `pnpm validate-data` — must pass
@@ -180,14 +193,14 @@ Short version:
 
 ## Roadmap summary
 
-| Milestone | Key deliverable |
-|---|---|
-| M0 (now) | Marketing site, JSON data, Web3Forms |
-| M2-3 | Move properties to Supabase |
-| M4-5 | Internal admin at `/admin` |
-| M6 | Tenant accounts + auth |
-| M9 | Visit booking |
-| M12 | Online rent payments (Razorpay) |
-| M18 | Owner dashboard |
+| Milestone | Key deliverable                      |
+| --------- | ------------------------------------ |
+| M0 (now)  | Marketing site, JSON data, Web3Forms |
+| M2-3      | Move properties to Supabase          |
+| M4-5      | Internal admin at `/admin`           |
+| M6        | Tenant accounts + auth               |
+| M9        | Visit booking                        |
+| M12       | Online rent payments (Razorpay)      |
+| M18       | Owner dashboard                      |
 
 Full roadmap: `docs/ROADMAP.md`

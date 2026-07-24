@@ -1,14 +1,38 @@
+/* Hallmark · genre: editorial · design-system: design.md · designed-as-app */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --font-inter: 'Inter', system-ui, sans-serif;
+    /* Hallmark design tokens — OKLCH mirror of the Tailwind brand palette in
+       tailwind.config.ts. Utility classes (bg-accent, text-ink, etc.) remain
+       the source of truth for styling; these exist for portability and for
+       any raw CSS (SVG fills, gradients) that wants to reference by name. */
+    --color-paper: oklch(98.43% 0.004 106.47);
+    --color-paper-2: oklch(100% 0 89.88);
+    --color-ink: oklch(21.78% 0 89.88);
+    --color-ink-2: oklch(47.48% 0 89.88);
+    --color-rule: oklch(92.45% 0.0096 93.57);
+    --color-accent: oklch(38.21% 0.0407 166.3);
+    --color-accent-hover: oklch(33.29% 0.035 166.2);
+    --color-accent-ink: oklch(100% 0 0);
+    --color-focus: oklch(38.21% 0.0407 166.3);
+    --color-error: oklch(52.27% 0.156 24.29);
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Plus Jakarta Sans reads warm at its natural spacing — none of the tight
+     negative tracking the previous Inter Tight pairing needed. */
+  .font-heading {
+    letter-spacing: -0.01em;
   }
 
   body {
@@ -28,15 +52,5 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-  }
-}
-
-@layer utilities {
-  .font-heading {
-    font-family: var(--font-inter);
-  }
-
-  .font-body {
-    font-family: var(--font-inter);
   }
 }

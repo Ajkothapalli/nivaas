@@ -4,6 +4,7 @@ import { PropertyCard } from '@/components/marketing/PropertyCard'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { CTABlock } from '@/components/marketing/CTABlock'
+import { Reveal } from '@/components/ui/Reveal'
 import { getBySlug } from '@/lib/repositories/localities'
 import { listByLocality } from '@/lib/repositories/properties'
 import { formatRent } from '@/lib/format'
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Managed Rental Homes in ${locality.name}, Hyderabad`,
-    description: `Browse Nivaas-managed furnished flats in ${locality.name}. No brokerage. Rents from ${formatRent(locality.avg_rent_min)}/mo. ${locality.tagline}.`,
+    description: `Browse Estate360-managed furnished flats in ${locality.name}. No brokerage. Rents from ${formatRent(locality.avg_rent_min)}/mo. ${locality.tagline}.`,
     openGraph: {
       title: `${locality.name}, Hyderabad — Managed Rental Homes`,
       description: locality.tagline,
@@ -39,7 +40,7 @@ export default async function LocalityPage({ params }: Props) {
 
   return (
     <>
-      <Section className="pt-14 pb-10 bg-accent">
+      <Section className="pt-14 md:pt-14 pb-10 md:pb-10 bg-accent">
         <Container>
           <h1 className="font-heading font-semibold text-white text-4xl md:text-5xl mb-3">
             {locality.name}
@@ -128,14 +129,16 @@ export default async function LocalityPage({ params }: Props) {
       </Section>
 
       {properties.length > 0 && (
-        <Section className="bg-bg pt-0">
+        <Section className="bg-bg pt-0 md:pt-0">
           <Container>
             <h2 className="font-heading font-medium text-ink text-2xl mb-8">
               Available homes in {locality.name}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {properties.map((property) => (
-                <PropertyCard key={property.id} property={property} />
+              {properties.map((property, i) => (
+                <Reveal key={property.id} delay={(i % 3) * 100}>
+                  <PropertyCard property={property} />
+                </Reveal>
               ))}
             </div>
           </Container>

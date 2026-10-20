@@ -26,8 +26,14 @@ export const metadata: Metadata = {
   },
 }
 
+// Hidden until real property data is in place. Flip to true to bring the section back.
+const SHOW_AVAILABLE_HOMES = false
+
 export default async function HomePage() {
-  const [featuredProperties, localities] = await Promise.all([listFeatured(6), listLocalities()])
+  const [featuredProperties, localities] = await Promise.all([
+    SHOW_AVAILABLE_HOMES ? listFeatured(6) : Promise.resolve([]),
+    listLocalities(),
+  ])
 
   return (
     <>
@@ -56,35 +62,37 @@ export default async function HomePage() {
 
       <HowItWorks />
 
-      <Section className="bg-bg pt-10 md:pt-14 pb-10 md:pb-14">
-        <Container>
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-8">
-            <Reveal className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
-              <h2 className="font-heading font-semibold text-ink text-3xl md:text-4xl mb-4 leading-tight">
-                Available Homes
-              </h2>
-              <p className="text-ink-muted mb-6">
-                Ready to move in, fully managed. Every listing you see here is inspected and priced
-                by us, not a third party.
-              </p>
-              <Link
-                href="/homes"
-                className="inline-flex text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-              >
-                View all homes →
-              </Link>
-            </Reveal>
+      {SHOW_AVAILABLE_HOMES && (
+        <Section className="bg-bg pt-10 md:pt-14 pb-10 md:pb-14">
+          <Container>
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-8">
+              <Reveal className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+                <h2 className="font-heading font-semibold text-ink text-3xl md:text-4xl mb-4 leading-tight">
+                  Available Homes
+                </h2>
+                <p className="text-ink-muted mb-6">
+                  Ready to move in, fully managed. Every listing you see here is inspected and
+                  priced by us, not a third party.
+                </p>
+                <Link
+                  href="/homes"
+                  className="inline-flex text-sm font-medium text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  View all homes →
+                </Link>
+              </Reveal>
 
-            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
-              {featuredProperties.map((property, i) => (
-                <Reveal key={property.id} delay={(i % 4) * 80}>
-                  <PropertyCard property={property} />
-                </Reveal>
-              ))}
+              <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+                {featuredProperties.map((property, i) => (
+                  <Reveal key={property.id} delay={(i % 4) * 80}>
+                    <PropertyCard property={property} />
+                  </Reveal>
+                ))}
+              </div>
             </div>
-          </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      )}
 
       <Section className="bg-surface pt-10 md:pt-14 pb-10 md:pb-14">
         <Container>

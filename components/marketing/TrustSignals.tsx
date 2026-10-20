@@ -89,7 +89,7 @@ const TRUST_ITEMS = [
 
 export function TrustSignals() {
   return (
-    <Section className="bg-surface" id="trust">
+    <Section className="bg-surface pt-10 md:pt-14" id="trust">
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal className="relative aspect-[4/3] rounded-2xl overflow-hidden order-2 lg:order-1">

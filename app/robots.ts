@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.services'
 
 export default function robots(): MetadataRoute.Robots {
   const isProduction = process.env.VERCEL_ENV === 'production'

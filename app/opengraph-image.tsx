@@ -50,7 +50,7 @@ export default async function Image() {
             color: 'rgba(255,255,255,0.5)',
           }}
         >
-          estate360.in
+          estate360.services
         </div>
       </div>
     ),

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { listAvailable } from '@/lib/repositories/properties'
 import { listAll as listLocalities } from '@/lib/repositories/localities'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.services'
 
 const STATIC_PAGES = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },

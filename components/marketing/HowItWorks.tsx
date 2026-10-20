@@ -52,7 +52,7 @@ export function HowItWorks() {
   const steps = tab === 'tenants' ? TENANT_STEPS : OWNER_STEPS
 
   return (
-    <Section className="bg-bg" id="how-it-works">
+    <Section className="bg-bg pb-10 md:pb-14" id="how-it-works">
       <Container>
         <Reveal className="text-center mb-12">
           <h2 className="font-heading font-semibold text-ink text-3xl md:text-4xl mb-4">

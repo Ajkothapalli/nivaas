@@ -42,7 +42,7 @@ export default async function PropertyDetailPage({ params }: Props) {
   const property = await getBySlug(params.slug)
   if (!property) notFound()
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.services'
   const propertyUrl = `${siteUrl}/homes/${property.slug}`
 
   const [relatedRaw] = await Promise.all([listByLocality(property.locality)])

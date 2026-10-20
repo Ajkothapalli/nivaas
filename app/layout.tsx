@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.in'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://estate360.services'),
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,

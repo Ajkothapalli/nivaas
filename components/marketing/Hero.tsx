@@ -59,8 +59,8 @@ export function Hero({
         <div className="absolute inset-0 bg-ink/70" />
       </div>
 
-      <Container className="relative z-10 py-20 md:py-24">
-        <div className="max-w-2xl">
+      <Container className="relative z-10 w-full py-20 md:py-24">
+        <div className="max-w-4xl">
           {tags && tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag) => (
@@ -79,7 +79,7 @@ export function Hero({
           </h1>
           <p
             className={cn(
-              'text-lg md:text-xl text-white/85 leading-relaxed mb-6 md:mb-10 max-w-xl',
+              'text-lg md:text-xl text-white/85 leading-relaxed mb-6 md:mb-10 max-w-2xl',
               search && 'hidden md:block'
             )}
           >

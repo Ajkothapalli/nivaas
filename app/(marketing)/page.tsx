@@ -56,7 +56,7 @@ export default async function HomePage() {
 
       <HowItWorks />
 
-      <Section className="bg-bg">
+      <Section className="bg-bg pt-10 md:pt-14 pb-10 md:pb-14">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-8">
             <Reveal className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
@@ -86,7 +86,7 @@ export default async function HomePage() {
         </Container>
       </Section>
 
-      <Section className="bg-surface">
+      <Section className="bg-surface pt-10 md:pt-14 pb-10 md:pb-14">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-8">
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-5 order-2 lg:order-1">
